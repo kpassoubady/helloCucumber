@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress UnresolvedMavenProperty -->
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>HelloCucumber</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-bom</artifactId>
+                <version>7.6.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.9.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>net.masterthought</groupId>-->
+        <!--            <artifactId>cucumber-reporting</artifactId>-->
+        <!--            <version>5.7.2</version>-->
+        <!--        </dependency>-->
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>io.cucumber</groupId>-->
+        <!--            <artifactId>cucumber-junit</artifactId>-->
+        <!--        </dependency>-->
+    </dependencies>
+
+
+    <profiles>
+        <profile>
+            <id>example</id>
+            <properties>
+                <cucumber.filter>@data</cucumber.filter>
+<!--                <cucumber.glue>com/example</cucumber.glue>-->
+                <cucumber.include>**/RunCucumberTest.java</cucumber.include>
+            </properties>
+        </profile>
+        <profile>
+            <id>os</id>
+            <properties>
+                <cucumber.filter>@web-driver</cucumber.filter>
+<!--                <cucumber.glue>com.osticket</cucumber.glue>-->
+                <cucumber.include>**/RunOsTicketTest.java</cucumber.include>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>18</source>
+                    <target>18</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <includes>
+                        <include>${cucumber.include}</include>
+                    </includes>
+                    <properties>
+                        <configurationParameters>
+                            cucumber.publish.enabled = true
+                            cucumber.publish.quiet = true
+                        </configurationParameters>
+                    </properties>
+                    <systemPropertyVariables>
+                        <cucumber.filter.tags>${cucumber.filter}</cucumber.filter.tags>
+<!--                        <cucumber.glue>${cucumber.glue}</cucumber.glue>-->
+                        <CUCUMBER_PUBLISH_TOKEN>ed8f8371-6f0f-4b0d-a2a7-24b331510869</CUCUMBER_PUBLISH_TOKEN>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>net.masterthought</groupId>-->
+            <!--                <artifactId>cucumber-reporting</artifactId>-->
+            <!--                <version>5.7.2</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>execution</id>-->
+            <!--                        <phase>verify</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>generate</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <projectName>osTicket Support Ticket System</projectName>-->
+            <!--                            <outputDirectory>${project.build.directory}</outputDirectory>-->
+            <!--                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>-->
+            <!--                            <parallelTesting>false</parallelTesting>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
+        </plugins>
+    </build>
+</project>
