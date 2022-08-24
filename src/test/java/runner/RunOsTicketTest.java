@@ -12,7 +12,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("com.osticket")
+@SelectClasspathResource("com/osticket")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "junit")
 @ConfigurationParameter(key = SNIPPET_TYPE_PROPERTY_NAME, value = "camelcase")
 
