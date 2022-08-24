@@ -1,6 +1,6 @@
 package org.example;
 
-import com.osticket.Color;
+import common.Color;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,4 +1,4 @@
-package com.osticket;
+package common;
 
 import io.cucumber.java.ParameterType;
 

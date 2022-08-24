@@ -1,4 +1,4 @@
-package com.osticket;
+package common;
 
 public class Color {
     public String color;

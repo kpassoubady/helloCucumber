@@ -21,7 +21,7 @@ Feature: Rules with Scenarios
       Examples:
         | totalNumberOfCoins | numberOfChocolates | customerCoins | changeCoins | remainingAmount | coinType | chocolateBought |
         | 4                  | 1                  | 1             | 1           | 0.20            | 0.20     | 0.80            |
-        | 8                  | 10                 | 5             | 2           | 0.20            | 0.20     | 0.80            |
+ #       | 8                  | 10                 | 5             | 2           | 0.20            | 0.20     | 0.80            |
 
 
   Rule: a sale cannot happen if we're out of stock
