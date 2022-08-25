@@ -1,10 +1,10 @@
-package org.example;
+package com.osticket.step.definitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class GoogleStepDefinitions {
+public class Google {
     @Given("I am on the google site")
     public void iAmOnTheGoogleSite() {
     }

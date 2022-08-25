@@ -1,3 +1,4 @@
+@home-page
 Feature: Cucumber expressions
 
   Scenario: searching colors

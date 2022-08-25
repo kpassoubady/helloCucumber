@@ -1,11 +1,11 @@
-package org.example;
+package com.osticket.step.definitions;
 
 import common.Color;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ExpressionsStepDefitions {
+public class Expressions {
     @When("I search for a {color}")
     public void iSearchForA(Color color) {
         System.out.println(color);

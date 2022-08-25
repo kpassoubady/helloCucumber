@@ -18,6 +18,6 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 @ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@home-page")
 @ConfigurationParameter(key = EXECUTION_DRY_RUN_PROPERTY_NAME, value = "false")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.osticket.step.definitions,common,hooks")
-@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@api")
+@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@home-page")
 public class RunOsTicketTest {
 }
