@@ -24,6 +24,7 @@ Feature: Scenario Outline and Scenario Template Example
     And I type invalid password "<password>"
     And I click sign in
     Then I verify that I have not logged in
+
     Examples:
       | userId | password  |
       | home   | home page |
@@ -51,7 +52,7 @@ Feature: Scenario Outline and Scenario Template Example
       | news   | News page |
 
 
-    Scenarios:  credentials scenario
+    Scenarios:  Happy path for credentials scenario
 
   Scenario: Log in with wrong credentials
     When I log in with the wrong credentials
@@ -60,3 +61,15 @@ Feature: Scenario Outline and Scenario Template Example
   Scenario: Log in with right credentials
     When I log in with the right credentials
     Then I should login
+
+
+  Scenario Outline: I have to check forgot password without typing user id
+    When I click forgot password link
+    Then I verify that I have not logged in
+    When I check my email
+    Then I have shown the user id "<userId>"
+    And I have shown encrypted "<password>"
+    Examples:
+      | userId | password  |
+      | home   | home page |
+      | news   | News page |

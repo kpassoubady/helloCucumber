@@ -1,11 +1,11 @@
-package com.osticket;
+package com.osticket.step.definitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class KavinSchoolStepdefs {
+public class KavinSchool {
     @Given("I'm on Kavin school website")
     public void iMOnKavinSchoolWebsite() {
     }

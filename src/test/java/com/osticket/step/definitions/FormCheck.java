@@ -1,10 +1,10 @@
-package com.osticket;
+package com.osticket.step.definitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class FormCheckStepDefinitions {
+public class FormCheck {
     @Then("I verify that the title is {string}")
     public void iVerifyThatTheTitleIs(String title) {
     }

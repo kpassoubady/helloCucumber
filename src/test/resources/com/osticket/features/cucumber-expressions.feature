@@ -6,3 +6,4 @@ Feature: Cucumber expressions
     Then I must get a result with that red
     And I can have 1 row in the result page
     But I will have 100 rows in the results page
+    * I can have 10 rows in the result pages

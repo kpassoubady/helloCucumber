@@ -9,7 +9,7 @@ Feature: Rules with Scenarios
     Scenario: no change
       Given there are 5 0.20 coins inside
       When the customer tries to buy a 0.85 chocolate with a 1 coin
-      Then the sale should not happen
+      Then the "sale" should not happen
 
     # happy path
     Scenario Outline: exact change

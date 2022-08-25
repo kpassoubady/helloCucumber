@@ -41,4 +41,9 @@ public class RulesStepDefinitions {
         
         
     }
+
+    @Then("the {string} should not happen")
+    public void theShouldNotHappen(String arg0) {
+
+    }
 }
